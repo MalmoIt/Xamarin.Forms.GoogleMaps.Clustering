@@ -62,6 +62,17 @@ namespace Xamarin.Forms.GoogleMaps.Clustering
         /// </summary>
         internal int MinimumClusterSize { get; set; } = 5;
 
+        /// <summary>
+        /// Gets or sets whether the pins are clustered automatically after a new one is added.
+        /// </summary>
+        /// <value><c>true</c> (default) if enabled, automatically clusters; otherwise, <c>false</c>.</value>
+        /// <example>
+        /// The cluster function is called every time a new pin is added to the map so the displayed pins are updated. 
+        /// Setting this property to false won't call the cluster function, and so map pins won't be updated until Cluster() is manually called on your map object.
+        /// Default (true) is recommended. Moving the camera or changing the zoom level updates the pins regardless.
+        /// </example>
+        public bool AutoClusterAfterAddingPin { get; set; } = true;
+
         public ClusterOptions()
         {
             Algorithm = ClusterAlgorithm.NonHierarchicalDistanceBased;
